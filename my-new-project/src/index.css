@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'LGSmart';
+  src: url('./assets/fonts/LGEITextTTF-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Map Helvetica (used by Excalidraw canvas text) to LGSmart font */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/LGEITextTTF-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* If you have a Bold file, replace with LGSmart-Bold.woff2/ttf accordingly */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/LGEITextTTF-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'LGSmart',system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Reserve space for vertical scrollbar to avoid layout shift between tabs (single edge to minimize extra width) */
+  scrollbar-gutter: stable;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  font-family: 'LGSmart', 'sans-serif';
+  /* Keep layout stable when vertical scrollbar appears/disappears (avoid extra left gutter) */
+  scrollbar-gutter: stable;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* NOTE: Removed global button overrides to avoid breaking embedded components (e.g., Excalidraw toolbar) */
+
+/* Ant Design Table 컴포넌트에 LG 글씨체 적용 */
+.recipe-table {
+  font-size: 1.0rem; /* 전체 글씨 크기 2배로 증가 */
+}
+
+.table-header {
+  font-weight: bold; /* 열 제목을 bold로 설정 */
+  font-size: 1rem; /* 열 제목 글씨 크기 증가 */
+}
+
+.ant-table-thead > tr > th {
+  font-weight: bold; /* 테이블 헤더 bold 설정 */
+  font-size: 1rem; /* 테이블 헤더 글씨 크기 증가 */
+}
+
+.ant-table-tbody > tr > td {
+  font-size: 1.0rem; /* 테이블 바디 글씨 크기 증가 */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Clamp styles within the Excalidraw host to prevent inherited layout inflation */
+.excalidraw-host {
+  font-size: 14px;
+}
+.excalidraw-host .excalidraw,
+.excalidraw-host .excalidraw * {
+  font-size: 14px;
+  font-family: 'LGSmart', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+}

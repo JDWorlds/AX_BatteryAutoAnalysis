@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // 프로젝트의 기본 경로 설정
+    "paths": {
+      "@/*": ["./*"] // alias 설정
+    },
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

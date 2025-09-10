@@ -1,0 +1,104 @@
+#root {
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.custom-node {
+  min-width: 150px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.custom-node-header {
+  flex-grow: 1;
+  padding: 8px 24px;
+  margin-bottom: 8px;
+}
+.custom-node-subheader {
+  flex-grow: 1;
+  padding: 8px;
+  background: #eee;
+}
+.custom-node-content {
+  flex-grow: 1;
+  padding: 0 8px 8px 8px;
+}
+.custom-node-port {
+  flex-grow: 1;
+  padding: 8px 16px;
+  position: relative;
+  text-align: center;
+}
+.custom-node-port-in {
+  text-align: left;
+}
+.custom-node-port-out {
+  text-align: right;
+}
+
+.circle-port {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.circle-port:hover {
+  background: #bbb;
+}
+.circle-porter {
+  position: absolute;
+  top: 8px;
+}
+.circle-porter-in {
+  left: -8px;
+}
+.circle-porter-out {
+  right: -8px;
+}
+
+.diagram-container {
+  width: 100%; /* 부모에 맞춰 가로 확장 */
+  height: 100%; /* 부모에 맞춰 세로 확장 */
+  background-color: transparent; /* 배경은 부모에서 처리 */
+  border: none; /* 테두리는 부모 래퍼에서 처리 */
+}
+
+.editor-container {
+  display: flex;
+  height: 100vh;
+}
+
+.palette {
+  width: 200px;
+  border-right: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.diagram {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+}
